@@ -103,6 +103,7 @@ grails:
             xml:
               - text/xml
               - application/xml
+            foo: bar
     urlmapping:
         cache:
             maxsize: 1000
