@@ -12,12 +12,12 @@ class MimeTypeSpec extends Specification {
     GrailsApplication grailsApplication
 
     void "Test that we can resolve a configured mime-type"() {
-        when: "We DO have a plugin with mime-types"
+        when: "We have a plugin with mime-types"
         MimeType type = grailsMimeUtility.getMimeTypeForExtension('foo')
 
 
-        then: "We CANNOT resolve our mime-type"
-        type == null
+        then: "We should be able to resolve our mime-type"
+        type != null && type.name == 'bar'
 
         and: "the config is still there"
         grailsApplication.config.grails.mime.types.foo == 'bar'
